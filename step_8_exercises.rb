@@ -21,9 +21,9 @@ def print_header
   puts "-------------"
 end
 
-def print(students)
-  students.each do |student|
-    if student[:name].start_with?("T","t")
+def print(students_shorter_twelve)
+  students_shorter_twelve.each do |student|
+    if student[:name].size < 12
       puts "#{student[:name]} (#{student[:cohort]} cohort)"
     end
   end
@@ -52,6 +52,15 @@ print_footer(students)
 # def print(students)
 #  students.each do |student|
 #    if student[:name].start_with?("T","t")
+#      puts "#{student[:name]} (#{student[:cohort]} cohort)"
+#    end
+#  end
+# end
+
+# 8.3 Modify your program to only print the students whose name is shorter than 12 characters.
+# def print(students_shorter_twelve)
+#  students_shorter_twelve.each do |student|
+#    if student[:name].size < 12
 #      puts "#{student[:name]} (#{student[:cohort]} cohort)"
 #    end
 #  end
