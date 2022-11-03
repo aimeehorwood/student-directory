@@ -24,19 +24,19 @@ def input_students
 end
 
 def print_header
-  puts "The students of Villains Academy"
-  puts "-------------"
+  puts "The Students of Villains Academy".center(69)
+  puts "-----------------------".center(69, "~")
 end
 
 def print(students)
   students.each.with_index do |student, index|
-    puts " #{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
-    puts "They enjoy #{student[:hobbies]},they were born in #{student[:birth_place]} and they are #{student[:height]}cm tall."
+    puts "\n #{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
+    puts "\n They enjoy #{student[:hobbies]},they were born in #{student[:birth_place]} and they are #{student[:height]}cm tall."
   end
 end
 
 def print_footer(students)
-  puts "Overall, we have #{students.count} great students"
+  puts "\n Overall, we have #{students.count} great students".center(69)
 end
 
 students = input_students
@@ -81,3 +81,8 @@ print_footer(students)
 
 # 8.5 Our code only works with the student name and cohort. Add more information: hobbies, country of birth, height, etc.
 # As above and each_with_index amended to puts new information about students
+
+# 8.6 Research how the method center() of the String class works. Use it in your code to make the output beautifully aligned.
+# Added method .center(69) and made output more beautiful with spacing and centering.
+# puts "The students of Villains Academy".center(69)
+#  puts "-----------------------".center(69,'~')
