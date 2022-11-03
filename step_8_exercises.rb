@@ -21,11 +21,11 @@ def print_header
   puts "-------------"
 end
 
-def print(students_shorter_twelve)
-  students_shorter_twelve.each do |student|
-    if student[:name].size < 12
-      puts "#{student[:name]} (#{student[:cohort]} cohort)"
-    end
+def print_loop(students)
+  i = 0
+  while i < students.length
+    puts "#{students[i][:name]} (#{students[i][:cohort]} cohort)"
+    i += 1
   end
 end
 
@@ -36,11 +36,10 @@ end
 students = input_students
 
 print_header
-print(students)
+print_loop(students)
 print_footer(students)
 
 # 8.1 How can you modify the program to print a number before the name of each student, e.g. "1. Dr. Hannibal Lecter"?
-
 # def print(students)
 #   students.each.with_index do |student,index|
 #     puts " #{index +1}. #{student[:name]} (#{student[:cohort]} cohort)"
@@ -48,7 +47,6 @@ print_footer(students)
 # end
 
 # 8.2 Modify your program to only print the students whose name begins with a specific letter.
-
 # def print(students)
 #  students.each do |student|
 #    if student[:name].start_with?("T","t")
@@ -63,5 +61,14 @@ print_footer(students)
 #    if student[:name].size < 12
 #      puts "#{student[:name]} (#{student[:cohort]} cohort)"
 #    end
+#  end
+# end
+
+# 8.4  Rewrite the each() method that prints all students using while or until control flow methods (Loops).
+# def print_loop(students)
+#  i = 0
+#  while i < students.length
+#    puts "#{students[i][:name]} (#{students[i][:cohort]} cohort)"
+#    i += 1
 #  end
 # end
