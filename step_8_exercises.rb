@@ -49,7 +49,13 @@ def print_by_group(students)
 end
 
 def print_footer(students)
-  puts "\n Overall, we have #{students.count} great students".center(69)
+  if students.length == 1
+    puts "\n Overall, we have #{students.count} great student".center(69)
+  elsif students.length > 1
+    puts "\n Overall, we have #{students.count} great students".center(69)
+  else
+    puts "\n There are no students enrolled at the Villains Academy".center(69)
+  end
 end
 
 students = input_students
@@ -101,8 +107,8 @@ print_footer(students)
 #  puts "-----------------------".center(69,'~')
 
 # 8.7 In the input_students method the cohort value is hard-coded. How can you ask for both the name and the cohort? What if one of the values is empty? Can you supply a default value? The input will be given to you as a string? How will you convert it to a symbol? What if the user makes a typo?
-#def input_students
-#cohorts = ['January','February','March','April','May','June','July','August','September','October','November','December']
+# def input_students
+# cohorts = ['January','February','March','April','May','June','July','August','September','October','November','December']
 #  puts "Please enter the name of student and the month they started"
 #  puts "To finish, just hit return twice"
 
@@ -133,7 +139,7 @@ print_footer(students)
 #  students
 # end
 
-#8.8 Once you complete the previous exercise, change the way the users are displayed: print them grouped by cohorts. 
+#8.8 Once you complete the previous exercise, change the way the users are displayed: print them grouped by cohorts.
 #To do this, you'll need to get a list of all existing cohorts (the map() method may be useful but it's not the only option), iterate over it and only print the students from that cohort.
 # As above
 
@@ -147,4 +153,18 @@ print_footer(students)
 
 # 8.10 We've been using the chomp() method to get rid of the last return character.
 # Find another method among those provided by the String class that could be used for the same purpose (although it will require passing some arguments).
-#.strip as above 
+# .strip as above
+
+#8.11 completed in typos_8.11.rb file
+
+#8.12 What happens if the user doesn't enter any students? It will try to print an empty list.
+# How can you use an if statement (Control Flow) to only print the list if there is at least one student in there?
+# def print_footer(students)
+#  if students.length == 1
+#  puts "\n Overall, we have #{students.count} great student".center(69)
+#  elsif students.length > 1
+#    puts "\n Overall, we have #{students.count} great students".center(69)
+#  else
+#    puts "\n There are no students enrolled at the Villains Academy".center(69)
+#  end
+# end
