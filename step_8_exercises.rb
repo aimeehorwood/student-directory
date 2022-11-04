@@ -35,9 +35,16 @@ def print_header
   puts "-----------------------".center(69, "~")
 end
 
-def print(students)
-  students.each.with_index do |student, index|
-    puts "\n #{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
+def print_by_group(students)
+  cohorts = students.map { |student| student[:cohort] }.uniq
+  cohorts.each do |cohort|
+    puts "Students in #{cohort} cohort:".center(69)
+    students.each do |student|
+      if student[:cohort] == cohort
+        puts "#{student[:name]} (#{student[:cohort]}) cohort"
+      else
+      end
+    end
   end
 end
 
@@ -48,7 +55,7 @@ end
 students = input_students
 
 print_header
-print(students)
+print_by_group(students)
 print_footer(students)
 
 # 8.1 How can you modify the program to print a number before the name of each student, e.g. "1. Dr. Hannibal Lecter"?
@@ -117,11 +124,14 @@ print_footer(students)
 #      puts "Now we have #{students.count} student"
 #    else
 #      puts "Now we have #{students.count} students"
-#    end  
-   
+#    end
+
 #    name = gets.chomp.capitalize
 #    cohort = gets.chomp.capitalize
 #  end
 
 #  students
 # end
+
+#8.8 Once you complete the previous exercise, change the way the users are displayed: print them grouped by cohorts. To do this, you'll need to get a list of all existing cohorts (the map() method may be useful but it's not the only option), iterate over it and only print the students from that cohort.
+# As above
