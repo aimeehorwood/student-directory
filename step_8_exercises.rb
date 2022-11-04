@@ -5,8 +5,8 @@ def input_students
 
   students = []
 
-  name = gets.chomp.capitalize
-  cohort = gets.chomp.capitalize
+  name = gets.strip.capitalize
+  cohort = gets.strip.capitalize
 
   while !name.empty?
     if cohort.empty?
@@ -14,7 +14,7 @@ def input_students
     end
     until cohorts.include?(cohort)
       puts "Please try again"
-      cohort = gets.chomp.capitalize
+      cohort = gets.strip.capitalize
     end
     students << { name: name, cohort: cohort.to_sym }
     if students.count == 1
@@ -23,8 +23,8 @@ def input_students
       puts "Now we have #{students.count} students"
     end
 
-    name = gets.chomp.capitalize
-    cohort = gets.chomp.capitalize
+    name = gets.strip.capitalize
+    cohort = gets.strip.capitalize
   end
 
   students
@@ -144,3 +144,7 @@ print_footer(students)
 # else
 #  puts "Now we have #{students.count} students"
 # end
+
+# 8.10 We've been using the chomp() method to get rid of the last return character.
+# Find another method among those provided by the String class that could be used for the same purpose (although it will require passing some arguments).
+#.strip as above 
