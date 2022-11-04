@@ -1,23 +1,30 @@
 def input_students
-  puts "Please enter the names and details of students"
+  cohorts = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  puts "Please enter the name of student and the month they started"
   puts "To finish, just hit return twice"
 
   students = []
 
-  name = gets.chomp
+  name = gets.chomp.capitalize
+  cohort = gets.chomp.capitalize
 
   while !name.empty?
-    puts "What are their hobbies?"
-    hobbies = gets.chomp
-    puts "What is their birth place?"
-    birth_place = gets.chomp
-    puts "What is their height in cm?"
-    height = gets.chomp
+    if cohort.empty?
+      cohort = "November"
+    end
+    until cohorts.include?(cohort)
+      puts "Please try again"
+      cohort = gets.chomp.capitalize
+    end
+    students << { name: name, cohort: cohort.to_sym }
+    if students.count == 1
+      puts "Now we have #{students.count} student"
+    else
+      puts "Now we have #{students.count} students"
+    end
 
-    students << { name: name, hobbies: hobbies, birth_place: birth_place, height: height, cohort: :november }
-    puts "Now we have #{students.count} students"
-
-    name = gets.chomp
+    name = gets.chomp.capitalize
+    cohort = gets.chomp.capitalize
   end
 
   students
@@ -31,7 +38,6 @@ end
 def print(students)
   students.each.with_index do |student, index|
     puts "\n #{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
-    puts "\n They enjoy #{student[:hobbies]},they were born in #{student[:birth_place]} and they are #{student[:height]}cm tall."
   end
 end
 
@@ -86,3 +92,36 @@ print_footer(students)
 # Added method .center(69) and made output more beautiful with spacing and centering.
 # puts "The students of Villains Academy".center(69)
 #  puts "-----------------------".center(69,'~')
+
+# 8.7 In the input_students method the cohort value is hard-coded. How can you ask for both the name and the cohort? What if one of the values is empty? Can you supply a default value? The input will be given to you as a string? How will you convert it to a symbol? What if the user makes a typo?
+#def input_students
+#cohorts = ['January','February','March','April','May','June','July','August','September','October','November','December']
+#  puts "Please enter the name of student and the month they started"
+#  puts "To finish, just hit return twice"
+
+#  students = []
+
+#  name = gets.chomp.capitalize
+#  cohort = gets.chomp.capitalize
+
+# while !name.empty? do
+#    if cohort.empty?
+#      cohort = "November"
+#    end
+#    until cohorts.include?(cohort)
+#      puts "Please try again"
+#      cohort = gets.chomp.capitalize
+#    end
+#    students << {name: name, cohort: cohort.to_sym}
+#    if students.count == 1
+#      puts "Now we have #{students.count} student"
+#    else
+#      puts "Now we have #{students.count} students"
+#    end  
+   
+#    name = gets.chomp.capitalize
+#    cohort = gets.chomp.capitalize
+#  end
+
+#  students
+# end
