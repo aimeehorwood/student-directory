@@ -133,5 +133,14 @@ print_footer(students)
 #  students
 # end
 
-#8.8 Once you complete the previous exercise, change the way the users are displayed: print them grouped by cohorts. To do this, you'll need to get a list of all existing cohorts (the map() method may be useful but it's not the only option), iterate over it and only print the students from that cohort.
+#8.8 Once you complete the previous exercise, change the way the users are displayed: print them grouped by cohorts. 
+#To do this, you'll need to get a list of all existing cohorts (the map() method may be useful but it's not the only option), iterate over it and only print the students from that cohort.
 # As above
+
+#8.9 Right now if we have only one student, the user will see a message "Now we have 1 students", whereas it should be "Now we have 1 student".
+# How can you fix it so that it uses the singular form when appropriate and plural form otherwise?
+# if students.count == 1
+# puts "Now we have #{students.count} student"
+# else
+#  puts "Now we have #{students.count} students"
+# end
