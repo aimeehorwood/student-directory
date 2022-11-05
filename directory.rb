@@ -41,11 +41,7 @@ def input_students
   while !name.empty? do
     # add the student hash to the array
     add_students(name)
-    if @student.length == 1
-      puts "Now we have #{@students.count} student"
-    else
-      puts "Now we have #{@students.count} students"
-    end
+    puts @students.length == 1 ? ("Now we have #{@students.count} student") : ("Now we have #{@students.count} students")
     # get another name from the user
     name = STDIN.gets.chomp
   end
@@ -69,7 +65,7 @@ def print_student_list
 end
 
 def print_footer
-  puts "Overall, we have #{@students.count} great students"
+  puts @students.length == 1 ? ("Overall, we have #{@students.count} great student") : ("Overall, we have #{@students.count} great students")
 end
 
 def save_students
