@@ -3,7 +3,7 @@
 The student directory script allows you to manage the list of students enrolled at Villains Academy.
 
 
-<h3> Completed exercises: :point_down: 3</h3>
+<h3> Completed Exercises: :point_down: </h3>
 
 * We're using the each() method to iterate over an array of students. How can you modify the program to print a number before the name of each student,     e.g. "1. Dr. Hannibal Lecter"? Hint: look into each_with_index()
 * Modify your program to only print the students whose name begins with a specific letter.
@@ -17,11 +17,7 @@ The student directory script allows you to manage the list of students enrolled 
 * We've been using the chomp() method to get rid of the last return character. Find another method among those provided by the String class that could be used for the same purpose (although it will require passing some arguments).
 * Find all typos in that file and correct them. Use your experience, online documentation, etc. to find all the mistakes. Run the script in the terminal from time to time to make sure it works as it should. Google the errors Ruby gives you, think about what they could mean, try different things but don't look the answer up :)
 * What happens if the user doesn't enter any students? It will try to print an empty list. How can you use an if statement (Control Flow) to only print the list if there is at least one student in there?
- * 
  
- * 
- */
-
 
 
 ## How to use
