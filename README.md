@@ -2,6 +2,28 @@
 
 The student directory script allows you to manage the list of students enrolled at Villains Academy.
 
+
+<h3> Completed exercises: :point_down: 3</h3>
+
+* We're using the each() method to iterate over an array of students. How can you modify the program to print a number before the name of each student,     e.g. "1. Dr. Hannibal Lecter"? Hint: look into each_with_index()
+* Modify your program to only print the students whose name begins with a specific letter.
+* Modify your program to only print the students whose name is shorter than 12 characters.
+* Rewrite the each() method that prints all students using while or until control flow methods (Loops).
+* Our code only works with the student name and cohort. Add more information: hobbies, country of birth, height, etc.
+* Research how the method center() of the String class works. Use it in your code to make the output beautifully aligned.
+* In the input_students method the cohort value is hard-coded. How can you ask for both the name and the cohort? What if one of the values is empty? Can   you supply a default value? The input will be given to you as a string? How will you convert it to a symbol? What if the user makes a typo?
+* Once you complete the previous exercise, change the way the users are displayed: print them grouped by cohorts. To do this, you'll need to get a list   of all existing cohorts (the map() method may be useful but it's not the only option), iterate over it and only print the students from that cohort.
+* Right now if we have only one student, the user will see a message "Now we have 1 students", whereas it should be "Now we have 1 student". How can you fix it so that it uses the singular form when appropriate and plural form otherwise?
+* We've been using the chomp() method to get rid of the last return character. Find another method among those provided by the String class that could be used for the same purpose (although it will require passing some arguments).
+* Find all typos in that file and correct them. Use your experience, online documentation, etc. to find all the mistakes. Run the script in the terminal from time to time to make sure it works as it should. Google the errors Ruby gives you, think about what they could mean, try different things but don't look the answer up :)
+* What happens if the user doesn't enter any students? It will try to print an empty list. How can you use an if statement (Control Flow) to only print the list if there is at least one student in there?
+ * 
+ 
+ * 
+ */
+
+
+
 ## How to use
 
 ```shell
